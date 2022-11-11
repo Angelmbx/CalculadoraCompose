@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 
+
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -46,7 +47,7 @@ fun AppView() {
         ) {
         Column(
             Modifier
-                .fillMaxWidth().weight(1f),
+                .fillMaxWidth().weight(2f),
                 verticalArrangement = Arrangement.Top
         ) {
 
@@ -67,8 +68,9 @@ fun AppView() {
                     .padding(25.dp)
             ) {
                 Text(
-                    text = "",
-                    textAlign = TextAlign.Center,
+                    text = "0.", modifier=Modifier.fillMaxWidth(), textAlign = TextAlign.End,
+                    fontSize = 35.sp
+
 
                     )
 
@@ -77,29 +79,127 @@ fun AppView() {
 
         }
         Column(
-            Modifier.fillMaxWidth().weight(4f)
-        ){
-            Row(Modifier.fillMaxWidth(), Arrangement.SpaceAround) {
-                Text(text = "1", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-                Text(text = "2", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-                Text(text = "3", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
+            Modifier.fillMaxWidth().weight(2f)
+        ) {
+            Row(Modifier.fillMaxWidth()) {
+                Text(text = "+",
+                    Modifier.background(Color.White).weight(1f)
+                        .border(width = 2.dp, color = Color.Black).fillMaxWidth(),
+                    fontSize = 45.sp,
+                    textAlign = TextAlign.Center
+                )
+                Text(text = "-",
+                    Modifier.background(Color.White).weight(1f)
+                        .border(width = 2.dp, color = Color.Black).fillMaxWidth(),
+                    fontSize = 45.sp,
+                    textAlign = TextAlign.Center
+                )
+                Text(text = "x",
+                    Modifier.background(Color.White).weight(1f)
+                        .border(width = 2.dp, color = Color.Black).fillMaxWidth(),
+                    fontSize = 45.sp,
+                    textAlign = TextAlign.Center
+                )
+                Text(text = "%",
+                    Modifier.background(Color.White).weight(1f)
+                        .border(width = 2.dp, color = Color.Black).fillMaxWidth(),
+                    fontSize = 45.sp,
+                    textAlign = TextAlign.Center
+                )
             }
-            Row(Modifier.fillMaxWidth(), Arrangement.SpaceAround) {
-                Text(text = "4", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-                Text(text = "5", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-                Text(text = "6", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
+
+
+            Column(
+                Modifier.fillMaxWidth().weight(4f)
+            ) {
+                Row(
+                    Modifier
+                        .fillMaxWidth().weight(1f)
+                ) {
+                    Text(text = "1",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "2",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "3",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
+                Row(Modifier.fillMaxWidth().weight(1f)) {
+                    Text(text = "4",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "5",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "6",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
+                Row(Modifier.fillMaxWidth().weight(1f)) {
+                    Text(text = "7",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "8",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "9",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
+                Row(Modifier.fillMaxWidth().weight(1f)) {
+                    Text(text = "0",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = ".",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(text = "=",
+                        Modifier.background(Color.White).weight(1f)
+                            .border(width = 2.dp, color = Color.Black).fillMaxSize(),
+                        fontSize = 25.sp,
+                        textAlign = TextAlign.Center
+                    )
+
+
+                }
+
             }
-            Row(Modifier.fillMaxWidth(), Arrangement.SpaceAround) {
-                Text(text = "7", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-                Text(text = "8", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-                Text(text = "9", Modifier.background(Color.White) .border(width = 2.dp, color = Color.Black) .padding(horizontal=16.dp, vertical= 8.dp), fontSize = 25.sp)
-            }
-
-        }
-    }
 
 
-
-
-}
+        }}}
 
