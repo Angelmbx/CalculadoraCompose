@@ -15,8 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -53,9 +55,11 @@ fun AppView() {
             Row(Modifier.fillMaxWidth()) {
                 Text(
                     text = "CALCULADORA",
+                    textDecoration= TextDecoration.Underline,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center,
                     fontSize = 30.sp,
+                    color = Color(0xD5E0EED5),
                     fontWeight = FontWeight.Bold,
                     fontFamily = FontFamily.Serif
                 )
@@ -65,6 +69,7 @@ fun AppView() {
                     .fillMaxWidth()
                     .background(Color.White)
                     .padding(25.dp)
+
             ) {
                 Text(
                     text = "0.", modifier=Modifier.fillMaxWidth(), textAlign = TextAlign.End,
@@ -74,8 +79,10 @@ fun AppView() {
 
             Row(Modifier
                 .fillMaxWidth()) {
-                Text(modifier = Modifier.fillMaxWidth(), text = "by Angel Miranda Enterprises™", textAlign = TextAlign.End)
-                
+                Text(modifier = Modifier.fillMaxWidth(),
+                    text = "by Angel Miranda Enterprises™",
+                    textAlign = TextAlign.End, fontStyle = FontStyle.Italic)
+
             }
         }
         Column(
@@ -85,7 +92,7 @@ fun AppView() {
         ) {
             Row(Modifier.fillMaxWidth()
                 .padding(20.dp)){
-                Text(text = "RESET",
+                Text(text = "/////RESET////",
                     Modifier
                         .background(Color(0xFFE6B670))
                         .weight(1f)
