@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -96,8 +97,10 @@ fun AppView() {
                 .fillMaxWidth()
                 .weight(2f)
         ) {
-            Row(Modifier.fillMaxWidth()
-                .padding(20.dp)){
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(20.dp)){
                 Text(text = "/////RESET////",
                     Modifier
                         .background(Color(0xFFE6B670))
@@ -109,42 +112,10 @@ fun AppView() {
 
             }
             Row(Modifier.fillMaxWidth()) {
-                Text(text = "+",
-                    Modifier
-                        .background(Color.White)
-                        .weight(1f)
-                        .border(width = 2.dp, color = Color.Black)
-                        .fillMaxWidth(),
-                    fontSize = 45.sp,
-                    textAlign = TextAlign.Center
-                )
-                Text(text = "-",
-                    Modifier
-                        .background(Color.White)
-                        .weight(1f)
-                        .border(width = 2.dp, color = Color.Black)
-                        .fillMaxWidth(),
-                    fontSize = 45.sp,
-                    textAlign = TextAlign.Center
-                )
-                Text(text = "x",
-                    Modifier
-                        .background(Color.White)
-                        .weight(1f)
-                        .border(width = 2.dp, color = Color.Black)
-                        .fillMaxWidth(),
-                    fontSize = 45.sp,
-                    textAlign = TextAlign.Center
-                )
-                Text(text = "%",
-                    Modifier
-                        .background(Color.White)
-                        .weight(1f)
-                        .border(width = 2.dp, color = Color.Black)
-                        .fillMaxWidth(),
-                    fontSize = 45.sp,
-                    textAlign = TextAlign.Center
-                )
+                BotonOperador( "+", modifier = Modifier.weight(1f))
+                BotonOperador( "-", modifier = Modifier.weight(1f))
+                BotonOperador( "x", modifier = Modifier.weight(1f))
+                BotonOperador( "%", modifier = Modifier.weight(1f))
             }
 
 
@@ -158,137 +129,70 @@ fun AppView() {
                         .fillMaxWidth()
                         .weight(1f)
                 ) {
-                    Text(text = "1",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "2",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "3",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
+                    BotonNumero( texto= "1", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "2", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "3", modifier=Modifier.weight(1f))
                 }
                 Row(
                     Modifier
                         .fillMaxWidth()
                         .weight(1f)) {
-                    Text(text = "4",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "5",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "6",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
+                    BotonNumero( texto= "4", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "5", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "6", modifier=Modifier.weight(1f))
+
                 }
                 Row(
                     Modifier
                         .fillMaxWidth()
                         .weight(1f)) {
-                    Text(text = "7",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "8",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "9",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
+                    BotonNumero( texto= "7", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "8", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "9", modifier=Modifier.weight(1f))
                 }
                 Row(
                     Modifier
                         .fillMaxWidth()
                         .weight(1f)) {
-                    Text(text = "0",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = ".",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-                    Text(text = "=",
-                        Modifier
-                            .background(Color.White)
-                            .weight(1f)
-                            .border(width = 2.dp, color = Color.Black)
-                            .fillMaxSize(),
-                        fontSize = 25.sp,
-                        textAlign = TextAlign.Center
-                    )
-
+                    BotonNumero( texto= "0", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= ".", modifier=Modifier.weight(1f))
+                    BotonNumero( texto= "=", modifier=Modifier.weight(1f))
 
                 }
-
             }
-
-
         }}}
+
+@Composable
+fun BotonOperador(
+    texto : String,
+    modifier: Modifier,
+){
+    Text(text = texto,
+        Modifier
+            .background(Color.White)
+            .border(width = 2.dp, color = Color.Black)
+            .fillMaxWidth()
+            .then(modifier),
+        fontSize = 42.sp,
+        textAlign = TextAlign.Center
+    )
+}
+
+@Composable
+fun BotonNumero(
+    texto: String,
+    modifier: Modifier,
+
+){ Text(text = texto,
+    Modifier
+        .background(Color.White)
+        .border(width = 2.dp, color = Color.Black)
+        .fillMaxSize()
+        .then(modifier),
+        fontSize = 25.sp,
+        textAlign = TextAlign.Center
+    )
+}
 
 
 
