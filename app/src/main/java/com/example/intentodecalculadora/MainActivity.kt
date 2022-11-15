@@ -12,6 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.font.FontFamily
@@ -58,11 +59,16 @@ fun AppView() {
                     textDecoration= TextDecoration.Underline,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center,
-                    fontSize = 30.sp,
                     color = Color(0xD5E0EED5),
                     fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Serif
-                )
+                    fontFamily = FontFamily.Serif,
+                    style = MaterialTheme.typography.h4.copy(
+                        shadow = Shadow(
+                            offset = Offset(10f,10f),
+                            blurRadius= 10f
+                        ))
+                    )
+
             }
             Row(
                 Modifier
